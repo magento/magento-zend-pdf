@@ -60,7 +60,6 @@
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-#[\AllowDynamicProperties]
 class Zend_Pdf_Resource_Font_Type0 extends Zend_Pdf_Resource_Font
 {
     /**
@@ -118,7 +117,7 @@ class Zend_Pdf_Resource_Font_Type0 extends Zend_Pdf_Resource_Font
 
         $this->_isBold       = $descendantFont->isBold();
         $this->_isItalic     = $descendantFont->isItalic();
-        $this->_isMonospaced = $descendantFont->isMonospace();
+        $this->_isMonospace  = $descendantFont->isMonospace();
 
         $this->_underlinePosition  = $descendantFont->getUnderlinePosition();
         $this->_underlineThickness = $descendantFont->getUnderlineThickness();

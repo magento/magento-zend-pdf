@@ -38,14 +38,6 @@
 class Zend_Pdf_Element_Stream extends Zend_Pdf_Element
 {
     /**
-     * Object value
-     *
-     * @var Zend_Memory_Container
-     */
-    public $value;
-
-
-    /**
      * Object constructor
      *
      * @param string $val
