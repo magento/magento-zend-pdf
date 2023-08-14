@@ -35,14 +35,6 @@
 class Zend_Pdf_Element_Boolean extends Zend_Pdf_Element
 {
     /**
-     * Object value
-     *
-     * @var boolean
-     */
-    public $value;
-
-
-    /**
      * Object constructor
      *
      * @param boolean $val

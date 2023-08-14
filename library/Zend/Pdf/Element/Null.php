@@ -35,14 +35,6 @@
 class Zend_Pdf_Element_Null extends Zend_Pdf_Element
 {
     /**
-     * Object value. Always null.
-     *
-     * @var mixed
-     */
-    public $value;
-
-
-    /**
      * Object constructor
      */
     public function __construct()

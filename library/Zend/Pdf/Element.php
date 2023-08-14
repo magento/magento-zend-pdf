@@ -46,6 +46,13 @@ abstract class Zend_Pdf_Element
     private $_parentObject = null;
 
     /**
+     * Object value
+     *
+     * @var string
+     */
+    public $value;
+
+    /**
      * Return type of the element.
      * See ZPdfPDFConst for possible values
      *

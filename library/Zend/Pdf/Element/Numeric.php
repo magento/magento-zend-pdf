@@ -35,14 +35,6 @@
 class Zend_Pdf_Element_Numeric extends Zend_Pdf_Element
 {
     /**
-     * Object value
-     *
-     * @var numeric
-     */
-    public $value;
-
-
-    /**
      * Object constructor
      *
      * @param numeric $val

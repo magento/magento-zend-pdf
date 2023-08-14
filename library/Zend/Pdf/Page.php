@@ -110,13 +110,6 @@ class Zend_Pdf_Page extends Zend_Pdf_Canvas_Abstract
 
 
     /**
-     * Page dictionary (refers to an inderect Zend_Pdf_Element_Dictionary object).
-     *
-     * @var Zend_Pdf_Element_Reference|Zend_Pdf_Element_Object
-     */
-    protected $_dictionary;
-
-    /**
      * PDF objects factory.
      *
      * @var Zend_Pdf_ElementFactory_Interface

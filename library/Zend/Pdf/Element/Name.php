@@ -35,14 +35,6 @@
 class Zend_Pdf_Element_Name extends Zend_Pdf_Element
 {
     /**
-     * Object value
-     *
-     * @var string
-     */
-    public $value;
-
-
-    /**
      * Object constructor
      *
      * @param string $val
