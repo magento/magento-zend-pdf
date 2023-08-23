@@ -46,13 +46,6 @@ abstract class Zend_Pdf_Element
     private $_parentObject = null;
 
     /**
-     * Object value
-     *
-     * @var string
-     */
-    public $value;
-
-    /**
      * Return type of the element.
      * See ZPdfPDFConst for possible values
      *
@@ -138,10 +131,7 @@ abstract class Zend_Pdf_Element
      *
      * @return mixed
      */
-    public function toPhp()
-    {
-        return $this->value;
-    }
+    abstract public function toPhp();
 
     /**
      * Convert PHP value into PDF element.

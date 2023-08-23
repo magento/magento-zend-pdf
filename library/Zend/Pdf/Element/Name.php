@@ -35,6 +35,14 @@
 class Zend_Pdf_Element_Name extends Zend_Pdf_Element
 {
     /**
+     * Object value
+     *
+     * @var string
+     */
+    public $value;
+
+
+    /**
      * Object constructor
      *
      * @param string $val
@@ -149,5 +157,16 @@ class Zend_Pdf_Element_Name extends Zend_Pdf_Element
     public function toString($factory = null)
     {
         return '/' . self::escape((string)$this->value);
+    }
+
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return string
+     */
+    public function toPhp()
+    {
+        return $this->value;
     }
 }

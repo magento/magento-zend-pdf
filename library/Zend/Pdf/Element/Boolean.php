@@ -35,6 +35,14 @@
 class Zend_Pdf_Element_Boolean extends Zend_Pdf_Element
 {
     /**
+     * Object value
+     *
+     * @var boolean
+     */
+    public $value;
+
+
+    /**
      * Object constructor
      *
      * @param boolean $val
@@ -71,5 +79,16 @@ class Zend_Pdf_Element_Boolean extends Zend_Pdf_Element
     public function toString($factory = null)
     {
         return $this->value ? 'true' : 'false';
+    }
+
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return boolean
+     */
+    public function toPhp()
+    {
+        return $this->value;
     }
 }
