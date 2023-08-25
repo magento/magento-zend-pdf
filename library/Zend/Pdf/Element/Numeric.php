@@ -35,6 +35,14 @@
 class Zend_Pdf_Element_Numeric extends Zend_Pdf_Element
 {
     /**
+     * Object value
+     *
+     * @var numeric
+     */
+    public $value;
+
+
+    /**
      * Object constructor
      *
      * @param numeric $val
@@ -83,5 +91,16 @@ class Zend_Pdf_Element_Numeric extends Zend_Pdf_Element
             $prec++; $v *= 10;
         }
         return sprintf("%.{$prec}F", $this->value);
+    }
+
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return numeric
+     */
+    public function toPhp()
+    {
+        return $this->value;
     }
 }

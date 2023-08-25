@@ -38,6 +38,14 @@
 class Zend_Pdf_Element_Stream extends Zend_Pdf_Element
 {
     /**
+     * Object value
+     *
+     * @var Zend_Memory_Container
+     */
+    public $value;
+
+
+    /**
      * Object constructor
      *
      * @param string $val
@@ -118,5 +126,15 @@ class Zend_Pdf_Element_Stream extends Zend_Pdf_Element
     public function toString($factory = null)
     {
         return "stream\n" . $this->value->getRef() . "\nendstream";
+    }
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return Zend_Memory_Container
+     */
+    public function toPhp()
+    {
+        return $this->value;
     }
 }

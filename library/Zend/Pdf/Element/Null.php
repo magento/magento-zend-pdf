@@ -35,6 +35,14 @@
 class Zend_Pdf_Element_Null extends Zend_Pdf_Element
 {
     /**
+     * Object value. Always null.
+     *
+     * @var mixed
+     */
+    public $value;
+
+
+    /**
      * Object constructor
      */
     public function __construct()
@@ -63,5 +71,16 @@ class Zend_Pdf_Element_Null extends Zend_Pdf_Element
     public function toString($factory = null)
     {
         return 'null';
+    }
+
+
+    /**
+     * Convert PDF element to PHP type.
+     *
+     * @return mixed
+     */
+    public function toPhp()
+    {
+        return $this->value;
     }
 }
