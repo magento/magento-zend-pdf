@@ -274,9 +274,11 @@ class Zend_Pdf
     }
 
     /**
-     * Load PDF document from a file
+     * Load PDF document from a file or from a readable stream
      *
-     * @param string $source
+     * A stream is read from its current position to the end and stays open.
+     *
+     * @param string|resource $source
      * @param integer $revision
      * @return Zend_Pdf
      */
@@ -291,12 +293,21 @@ class Zend_Pdf
      * If $updateOnly is true and it's not a new document, then it only
      * appends new section to the end of file.
      *
-     * @param string $filename
+     * $filename may also be a writable stream. The document is written at the
+     * current position of the stream (with $updateOnly, position it at the end
+     * of the original document), and the stream stays open.
+     *
+     * @param string|resource $filename
      * @param boolean $updateOnly
      * @throws Zend_Pdf_Exception
      */
     public function save($filename, $updateOnly = false)
     {
+        if (is_resource($filename)) {
+            $this->render($updateOnly, $filename);
+            return;
+        }
+
         if (($file = @fopen($filename, $updateOnly ? 'ab':'wb')) === false ) {
             #require_once 'Zend/Pdf/Exception.php';
             throw new Zend_Pdf_Exception( "Can not open '$filename' file for writing." );
@@ -320,7 +331,7 @@ class Zend_Pdf
      * $revision used to roll back document to specified version
      * (0 - current version, 1 - previous version, 2 - ...)
      *
-     * @param string  $source - PDF file to load
+     * @param string|resource $source - PDF file or readable stream to load
      * @param integer $revision
      * @param bool    $load
      * @throws Zend_Pdf_Exception
